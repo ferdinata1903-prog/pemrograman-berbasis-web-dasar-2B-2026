@@ -1,0 +1,163 @@
+html {
+    --bg-1: #f7efe2;
+    --bg-2: #e9d2b1;
+    --coffee-900: #24150d;
+    --coffee-700: #4b2c1e;
+    --coffee-500: #8a5433;
+}
+
+body {
+    font-family: 'times new roman', sans-serif;
+    margin: 0;
+
+    background:
+        radial-gradient(circle at 12% 15%, rgba(209, 138, 75, 0.35), transparent 30%),
+        radial-gradient(circle at 90% 2%, rgba(138, 84, 51, 0.25), transparent 24%),
+        linear-gradient(150deg, var(--bg-1), var(--bg-2));
+    min-height: 100vh;
+}
+
+.hero {
+    text-align: center;
+    padding: 48px 16px;
+}
+
+.hero h1 {
+    margin: 0;
+    font-family: 'Playfair Display', serif;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-size: clamp(2rem, 5vw, 3.2rem);
+}
+
+.hero p {
+    margin: 12px auto 0;
+    max-width: 680px;
+    color: var(--coffee-700);
+    font-size: 1.05rem;
+}
+
+
+.kontainer {
+    margin-top: 10px;
+    padding: 30px;
+    display: flex;
+    align-items: center;
+    gap: 28px;
+}
+
+.gambar-produk img {
+    width: min(360px, 100%);
+    height: auto;
+    border-radius: 14px;
+    box-shadow: 0 12px 28px rgba(36, 21, 13, 0.23);
+}
+
+.deskripsi {
+    flex: 1;
+}
+
+.badge {
+    display: inline-block;
+    margin-bottom: 8px;
+    padding: 7px 12px;
+    border-radius: 999px;
+    background: linear-gradient(135deg, var(--coffee-700), var(--coffee-500));
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 700;
+    letter-spacing: 0.4px;
+    text-transform: uppercase;
+}
+
+h2 {
+    font-family: 'Playfair Display', serif;
+    margin: 0 0 12px;
+    color: var(--coffee-900);
+}
+
+.deskripsi p {
+    line-height: 1.65;
+    color: var(--coffee-700);
+}
+
+.produk-lain {
+    padding: 26px;
+    display: grid; 
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+    gap: 14px;
+}
+
+.produk-lain h2 {
+    grid-column: 1 / -1;
+    margin-bottom: 2px;
+}
+
+.produk-item {
+    border: 1px solid var(--line);
+    border-radius: 12px;
+    padding: 14px;
+    background: linear-gradient(165deg, #fffdf8, #f6e8d5);
+    transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+
+.produk-item:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 12px 20px rgba(45, 24, 12, 0.16);
+}
+
+.produk-item img {
+    width: auto;
+    height: auto;
+    aspect-ratio: 4 / 3;
+    object-fit: cover;
+    display: block;
+    border-radius: 10px;
+}
+
+.produk-item h3 {
+    margin: 12px 0 8px;
+}
+
+.produk-item p {
+    margin: 0 0 8px;
+    color: var(--coffee-700);
+    line-height: 1.55;
+}
+
+.kontak {
+    padding: 24px 26px 28px;
+    margin-bottom: 42px;
+}
+
+.harga {
+    font-size: 1.2rem;
+    font-weight: 700;
+    color: var(--accent);
+}
+
+button,
+.wa-link {
+    display: inline-block;
+    border: none;
+    border-radius: 9px;
+    padding: 10px 18px;
+    text-decoration: none;
+    color: #fff;
+    font-weight: 600;
+    cursor: pointer;
+    transition: transform 0.2s ease, filter 0.2s ease;
+}
+
+button {
+    background: linear-gradient(135deg, #2f1b12, #6a3f29);
+}
+
+.wa-link {
+    background: linear-gradient(135deg, #107b40, #1aaa58);
+}
+
+button:hover,
+.wa-link:hover {
+    color : black;
+}
