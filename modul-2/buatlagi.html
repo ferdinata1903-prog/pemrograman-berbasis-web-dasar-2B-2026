@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NexGen Store | Inovasi Smartphone Masa Depan</title>
+    
+    <style>
+        /* --- DASAR & TYPOGRAPHY --- */
+        body { 
+            margin: 0; 
+            padding: 0; 
+            font-family: 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+            background-color: #11487f; 
+            color: #1a1a1a; 
+            scroll-behavior: smooth;
+        }
+        
+        /* --- NAVIGATION --- */
+        header { 
+            background: #0f172a; /* Biru Gelap Futuristik */
+            padding: 15px 10%; 
+            display: flex; 
+            justify-content: space-between; 
+            align-items: center; 
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1); 
+            position: sticky; 
+            top: 0; 
+            z-index: 1000; 
+        }
+        .logo { 
+            font-size: 24px; 
+            font-weight: 800; 
+            color: #38bdf8; /* Warna Aksen Biru Muda */
+            letter-spacing: 2px;
+        }
+        nav a { 
+            margin: 0 15px; 
+            text-decoration: none; 
+            color: #cbd5e1; 
+            font-weight: 500; 
+            transition: 0.3s;
+        }
+        nav a:hover { color: #38bdf8; }
+        .btn-buy { 
+            background: #0f5a7a; 
+            color: #0f172a; 
+            padding: 10px 22px; 
+            border-radius: 8px; 
+            font-weight: bold; 
+            text-decoration: none;
+        }
+
+        /* --- HERO SECTION --- */
+        .hero { 
+            display: flex; 
+            align-items: center; 
+            padding: 80px 10%; 
+            background:linear-gradient(135deg, #0f2027, #203a43, #2c5364); 
+            flex-wrap: wrap; 
+            gap: 40px; 
+        }
+        .hero-text { flex: 1; min-width: 300px; }
+        .hero-text h1 { 
+            font-size: 3.5rem; 
+            margin: 0; 
+            color: #0f172a; 
+            line-height: 1.2; 
+        }
+        .hero-text p { 
+            font-size: 1.1rem; 
+            color: #64748b; 
+            margin: 20px 0 35px; 
+            line-height: 1.6; 
+        }
+        .cta-main { 
+            background: #0f172a; 
+            color: rgba(50, 7, 158, 0.881); 
+            padding: 15px 35px; 
+            text-decoration: none; 
+            border-radius: 10px; 
+            font-weight: 600; 
+            display: inline-block;
+        }
+        .hero-img { flex: 1; min-width: 300px; text-align: center; }
+        .hero-img img { 
+            border-radius: 30px;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+            width: 100%; 
+            max-width: 450px; 
+            filter: drop-shadow(0 20px 30px rgba(0,0,0,0.1));
+        }
+
+        /* --- PRODUCT GRID (BAGIAN SEJAJAR) --- */
+        .product-section { padding: 80px 10%; background: #f7f8f9; }
+        .section-title { text-align: center; margin-bottom: 50px; font-size: 2rem; color: #0f172a; }
+        
+        .grid { 
+            display: flex; 
+            justify-content: center; 
+            gap: 25px; 
+            flex-wrap: wrap; 
+            align-items: stretch; /* Memastikan kartu sama tinggi */
+        }
+        .card { 
+            background: white; 
+            width: 300px; 
+            padding: 20px; 
+            border-radius: 20px; 
+            box-shadow: 0 4px 6px rgba(0,0,0,0.05); 
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+        }
+        /* AGAR FOTO HP SEJAJAR */
+        .card img { 
+            width: 100%; 
+            height: 250px; /* Tinggi seragam */
+            object-fit: contain; /* Menggunakan 'contain' agar HP tidak terpotong */
+            margin-bottom: 20px; 
+            background: #f1f5f9; /* Background tipis agar terlihat rapi */
+            border-radius: 12px;
+        }
+        .card h3 { color: #0f172a; margin: 10px 0; }
+        .card p { color: #64748b; font-size: 0.9rem; flex-grow: 1; margin-bottom: 20px; }
+        .btn-card { 
+            border: 2px solid #0f172a; 
+            padding: 8px; 
+            border-radius: 8px; 
+            text-decoration: none; 
+            color: #0f172a; 
+            font-weight: 600; 
+        }
+
+        /* --- FOOTER --- */
+        footer { background: #0f172a; color: white; text-align: center; padding: 40px; margin-top: 50px; }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">NEXGEN</div>
+        <nav>
+            <a href="#">Beranda</a>
+            <a href="#produk">Koleksi</a>
+            <a href="#" class="btn-buy">Beli Sekarang</a>
+        </nav>
+    </header>
+
+    <section class="hero">
+        <div class="hero-text">
+            <h1>NexGen Ultra <span style="color: #38bdf8;">Z1</span></h1>
+            <p>Alami kekuatan chipset terbaru dengan layar 144Hz Pro Display. Smartphone yang didesain untuk produktivitas tanpa batas dan fotografi level profesional.</p>
+            <a href="#produk" class="cta-main">Lihat Detail</a>
+        </div>
+        <div class="hero-img">
+            <img src="https://images.unsplash.com/photo-1598327105666-5b89351aff97?q=80&w=600" alt="Smartphone Hero">
+        </div>
+    </section>
+
+    <section id="produk" class="product-section">
+        <h2 class="section-title">Pilih Model Yang Anda suka</h2>
+        <div class="grid">
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1511707171634-5f897ff02aa9?q=80&w=400" alt="Model Lite">
+                <h3>NexGen Lite</h3>
+                <p>Performa esensial dengan baterai tahan lama 5000mAh. Cocok untuk penggunaan harian yang aktif.</p>
+                <a href="#" class="btn-card">Pelajari</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1592890288564-76628a30a657?q=80&w=400" alt="Model Pro">
+                <h3>NexGen Pro</h3>
+                <p>Kamera 108MP dengan sensor malam canggih. Ambil foto indah dalam kondisi cahaya apa pun.</p>
+                <a href="#" class="btn-card">Pelajari</a>
+            </div>
+
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1567581935884-3349723552ca?q=80&w=400" alt="Model Ultra">
+                <h3>NexGen Ultra</h3>
+                <p>Layar melengkung 6.9 inci dengan performa gaming kelas berat. Pengalaman smartphone paling premium.</p>
+                <a href="#" class="btn-card">Pelajari</a>
+            </div>
+        </div>
+    </section>
+
+    <footer>
+        <p>© 2026 NexGen Tech Industries • Project Desain Web</p>
+    </footer>
+
+</body>
+</html>
+
+
