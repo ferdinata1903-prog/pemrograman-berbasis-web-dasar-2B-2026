@@ -1,0 +1,96 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: rgb(158, 160, 161);
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 70%;
+    background-color: white;
+    margin: 15px auto;
+}
+
+.header {
+    padding: 15px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 5px solid salmon;
+}
+
+.header ul li {
+    display: inline-block;
+    margin-right: 30px;
+}
+
+.header a {
+    color: salmon;
+    text-decoration: none;  
+    padding: 5px; 
+}
+
+.header a:hover {
+    background-color: skyblue;
+    color: white;
+}
+.baner {
+    height: 450px;
+    background-size: cover;
+    background-image: url(img/hero\ content.jpg);
+    background-position: 0 -350px;
+}
+
+.containerproduk {
+    border-top: 5px solid skyblue;
+    padding: 25px;
+}
+
+.produk {
+    width: 50%;
+    margin: 10px auto;
+    border: 2px solid rgb(93, 91, 91);
+    padding: 15px;
+    text-align: center;
+}
+
+.produk h2 {
+    color: rgb(38, 45, 48);
+    font-size: 45px;
+}
+
+.produk p {
+    font-weight: bold;
+}
+
+.produk img {
+    width: 70%;
+    border: 1px solid rgb(59, 58, 58);
+}
+
+.produk a {
+    color: salmon;
+    text-decoration: none;  
+    padding: 5px; 
+}
+
+.produk a:hover {
+    background-color: skyblue;
+    color: white;
+}
+
+.contact {
+    text-align: center;
+    font-weight: bold;
+    background-color: salmon;
+    border-top: 5px solid skyblue;
+    padding-bottom: 5px;
+}
+
+.copy p {
+    background-color: black;
+    color: white;
+    font-weight: bold;
+    text-align: center;
+    margin: 0;
+}
