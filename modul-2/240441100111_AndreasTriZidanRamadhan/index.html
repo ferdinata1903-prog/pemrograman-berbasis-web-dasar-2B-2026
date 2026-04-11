@@ -1,0 +1,260 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>KopiBoy</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    }
+
+    body {
+        font-family: poppins;
+        line-height: 1.6;
+        background-color: #fdf5e6;
+    }
+
+    .logo {
+        font-size: 24px;
+        font-weight: 500;
+        color: #000;
+        padding-left: 30px;
+    }
+
+    .logo span {
+        color: #d2691e;
+    }
+
+    nav {
+        background-color: #ffff; 
+        padding: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    nav ul {
+        display: flex;
+        list-style: none;
+        gap: 40px;
+    }
+
+    /* nav ul li {
+        display: inline;
+        margin-right: 30px;
+    } */
+
+    nav ul li a {
+        font-size: 20px;
+        font-weight: 500;
+        color: #6f4e37;
+        text-decoration: none;
+    }
+
+    nav ul li a:hover {
+        color: #d2691e;
+    }
+
+    .btn-nav {
+        font-size: 15px;
+        background-color: #d2691e;
+        color: white;
+        border: none;
+        border-radius: 10px;
+        padding: 10px 30px;
+    }
+
+    .btn-nav:hover {
+        background-color: #a0522d; 
+    }
+
+    #hero {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 80px;
+        background-color: #fdf5e6;
+    }
+
+    .hero-text {
+        flex: 1;
+        padding-right: 50px;
+    }
+
+    .hero-text h1 {
+        font-size: 50px;
+        color: #4b3621;
+        margin-bottom: 20px;
+        line-height: 1.5;
+    }
+
+    .hero-text p {
+        font-size: 20px;
+        color: #6f4e37;
+        margin-bottom: 20px;
+    }
+
+    .hero-image {
+        flex: 1;
+        text-align: right;
+    }
+
+    .hero-image img {
+        width: 100%;
+        border-radius: 20px;
+    }
+
+
+    button {
+        padding: 10px 20px;
+        cursor: pointer;
+        border: none;
+        border-radius: 10px;
+        margin: 5px;
+    }
+
+    .btn-1 {
+        background-color: #d2691e;
+        color: white; 
+    }
+
+    .btn-1:hover {
+        background-color: #a0522d; 
+    }
+
+    .btn-2 { 
+        background-color: #8b4513;
+        color: white;
+    }
+
+    .btn-2 a {
+        color: white;
+        text-decoration: none; 
+    }
+
+    .btn-2:hover {
+        background-color: #5a2d0c; 
+    }
+
+    #menu {
+        padding: 40px;
+        display: flex;
+        gap: 100px; 
+        justify-content: center;
+    }
+
+    .menu-card {
+        background-color: white;
+        border: 1px solid #ddd;
+        padding: 20px;
+        width: 250px;
+        text-align: center;
+        border-radius: 10px;
+    }
+
+    .menu-card img {
+        width: 100%;
+        height: 150px;
+        object-fit: cover; 
+        border-radius: 10px;
+    }
+
+    #kontak {
+        padding: 40px;
+        background-color: #333;
+        color: white;
+        display: flex; 
+        gap: 100px;
+        justify-content: center;
+    }
+
+    .kontak-card {
+        margin-bottom: 15px;
+    }
+
+    footer {
+        background-color: #000;
+        color: white;
+        padding: 30px;
+        text-align: center;
+    }
+
+    .copyright {
+        margin-top: 20px;
+        font-size: 12px;
+        border-top: 1px solid #555;
+        padding-top: 10px;
+    }
+    </style>
+</head>
+<body>
+    <nav>
+        <div class="logo">Kopi<span>Boy</span></div>
+        <ul>
+            <li><a href="#hero">Home</a></li>
+            <li><a href="#menu">Menu</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+        <button class="btn-nav">Pesan Sekarang</button>
+    </nav>
+    <header id="hero">
+        <div class="left-content">
+            <div class="hero-text">
+                <h1>Ngopi Sek Boyy!! <br>Biar Ga pusing</h1>
+                <p>Biarpun pahit, kopi tak pernah ingkar untuk menemani hari</p>
+            </div>
+            <div class="cta-group">
+                <button class="btn-1">Pesan Sekarang</button>
+                <button class="btn-2"><a href="#menu">Lihat Menu</a></button>
+            </div>
+        </div>
+        <div class="hero-image">
+            <img src="img-hero.jpg" alt="Kopi Boy">
+        </div>
+    </header>
+    <section id="menu">
+        <div class="menu-card">
+            <div class="img-placeholder">
+                <img src="menu-card1.jpg" alt="Espresso">
+            </div>
+            <h3>Espresso</h3>
+            <p>Kopi hitam pekat dengan rasa yang kuat dan aroma yang menggoda.</p>
+        </div>
+        <div class="menu-card">
+                <div class="img-placeholder">
+                    <img src="menu-card2.jpg" alt="Cappuccino">
+                </div>
+            <h3>Cappuccino</h3>
+            <p>Kopi dengan campuran susu panas dan busa susu yang lembut.</p>
+        </div>
+        <div class="menu-card">
+            <div class="img-placeholder">
+                <img src="menu-card3.jpg" alt="Latte">
+            </div>
+            <h3>Latte</h3>
+            <p>Kopi dengan lebih banyak susu, memberikan rasa yang lebih ringan dan creamy.</p>
+        </div>
+    </section>
+    <section id="kontak">
+        <div class="kontak-card">
+            <h3>Alamat</h3>
+            <p>Jl. Panglima Sudirman, Lamongan</p>
+        </div>
+        <div class="kontak-card">
+            <h3>Telepon</h3>
+            <p>(+62) 89606756814</p>
+        </div>
+        <div class="kontak-card">
+            <h3>Email</h3>
+            <p>kopiboy@gmail.com</p>
+        </div>
+    </section>
+    <footer class="footer-bottom">
+        <p>&copy; 2026 KopiBoy. All rights reserved.</p>
+    </footer>
+</body>
+</html>
