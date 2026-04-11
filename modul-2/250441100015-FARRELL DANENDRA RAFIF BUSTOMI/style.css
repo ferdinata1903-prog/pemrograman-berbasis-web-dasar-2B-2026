@@ -1,0 +1,153 @@
+ body {
+            background-color: #0f172a;
+            font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+            margin: 0;
+            color: white;
+        }
+
+        nav {
+            padding: 20px 50px;
+            background-color: #020617;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            top: 0;
+            position: sticky;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: white;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 50px;
+            font-size: 20px;
+        }
+
+        .isi {
+            max-width: 50%;
+        }
+
+        .home {
+            padding: 60px 50px;
+            display: flex;
+            justify-content: space-around;
+            align-items: center;
+        }
+
+        .home img {
+            width: 500px;
+            border-radius: 10px;
+        }
+
+        .home h1 {
+            font-size: 40px;
+        }
+
+        .home p {
+            font-size: 20px;
+            margin: 20px 0;
+            color: #a7a7aa;
+            font-size: 25px;
+        }
+
+        .home .btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #38bdf8, #6366f1);
+            border: none;
+            color: white;
+            font-size: 25px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        .home .btn a {
+            color: white;
+            text-decoration: none;
+        }
+
+        .home .btn:hover {
+            background: linear-gradient(45deg, #0ea5e9, #4f46e5);
+        }
+
+        .produk {
+            padding: 20px 50px;
+            background-color: #020617;
+        }
+
+        .produk h1 {
+            text-align: center;
+            margin-bottom: 20px;
+            font-size: 36px;
+        }
+
+        .deskripsiProduk {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #a7a7aa;
+            font-size: 20px;
+        }
+
+        .card {
+            display: flex;
+            justify-content: space-around;
+            gap: 20px;
+        }
+
+        .cardItem {
+            background-color: #0f172a;
+            padding: 20px;
+            border-radius: 10px;
+            width: 30%;
+        }
+
+        .cardItem img {
+            width: 80%;
+            display: block;
+            margin: 0 auto 20px;
+        }
+
+        .cardItem p {
+            color: #a7a7aa;
+            text-align: justify;
+            font-size: 20px;
+        }
+
+        .btn {
+            padding: 10px 20px;
+            background: linear-gradient(45deg, #38bdf8, #6366f1);
+            border: none;
+            color: white;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            display: block;
+            margin: 20px auto;
+        }
+        .btn a {
+            color: white;
+            text-decoration: none;
+        }
+        .btn:hover {
+            background: linear-gradient(45deg, #0ea5e9, #4f46e5);
+        }
+        .beli h1, .beli p {
+            text-align: center;
+            font-size: 25px;
+            padding: 5px;
+        }
+        .beli img {
+            display: block;
+            margin: 0 auto;
+            border-radius: 10px;
+        }
+        footer {
+            text-align: center;
+            background-color: #020617;
+            padding: 30px;
+            color: #a7a7aa;
+            font-size: 25px;
+        }
