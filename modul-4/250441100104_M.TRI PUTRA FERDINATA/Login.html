@@ -1,0 +1,334 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login – Online Course Education</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&display=swap" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet"/>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: { sans: ['Plus Jakarta Sans', 'sans-serif'] },
+          colors: {
+            primary: { DEFAULT: '#5e7ac4', dark: '#2a47c0' },
+            accent:  { DEFAULT: '#f59f00', dark: '#e08e00' },
+            hero:    '#eef1fb',
+          }
+        }
+      }
+    }
+  </script>
+  <style>
+    @keyframes slideDown {
+      from { opacity: 0; transform: translateY(-6px); }
+      to   { opacity: 1; transform: translateY(0); }
+    }
+    .error-msg {
+      animation: slideDown 0.25s ease;
+    }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      20%       { transform: translateX(-6px); }
+      40%       { transform: translateX(6px); }
+      60%       { transform: translateX(-4px); }
+      80%       { transform: translateX(4px); }
+    }
+    .shake { animation: shake 0.4s ease; }
+  </style>
+</head>
+<body class="font-sans bg-hero min-h-screen flex items-center justify-center px-4">
+
+  <div class="w-full max-w-4xl bg-white rounded-2xl shadow-xl overflow-hidden flex flex-col lg:flex-row min-h-[520px]">
+
+
+    <div class="flex-1 bg-primary p-10 flex flex-col justify-center gap-6">
+      <h2 class="text-white text-3xl font-extrabold leading-snug">
+        Hello Prospective<br>Students
+      </h2>
+      <div class="w-full h-48 flex items-center justify-center">
+        <span class="text-white/50 text-sm"><img src="gambar_login page.png" alt=""></span>
+      </div>
+      <p class="text-white text-sm leading-relaxed font-semibold">
+        Unlock your professional potential. Learn from <br>industry leaders and stay ahead of <br>the competition.
+      </p>
+    </div>
+
+    <div class="flex-1 bg-hero p-10 flex flex-col justify-center gap-4">
+      <div class="text-center mb-2">
+        <p class="text-gray-900 font-bold text-base tracking-widest uppercase">Login Page</p>
+        <p class="text-gray-400 text-xs mt-1">Masukkan Username dan Password Anda</p>
+      </div>
+
+ 
+      <div class="flex flex-col gap-1">
+  
+        <div id="emailError" class="hidden error-msg flex items-center gap-1.5 bg-red-50 border border-red-300 text-red-600 text-xs font-semibold px-3 py-2 rounded-lg">
+          <i class="fa fa-circle-exclamation text-xs"></i>
+          <span id="emailErrorText">Email harus menggunakan @gmail.com</span>
+        </div>
+        <input
+          id="emailInput"
+          type="email"
+          placeholder="Email Address"
+          class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition"
+        />
+      </div>
+
+      <div class="flex flex-col gap-1">
+      
+        <div id="passwordError" class="hidden error-msg flex items-center gap-1.5 bg-red-50 border border-red-300 text-red-600 text-xs font-semibold px-3 py-2 rounded-lg">
+          <i class="fa fa-circle-exclamation text-xs"></i>
+          <span id="passwordErrorText">Password minimal 8 karakter</span>
+        </div>
+        <div class="relative">
+          <input
+            id="passwordInput"
+            type="password"
+            placeholder="Password"
+            class="w-full px-4 py-3 rounded-lg border border-gray-200 bg-white text-sm text-gray-700 focus:outline-none focus:ring-2 focus:ring-primary/40 focus:border-primary transition pr-11"
+          />
+   
+          <button
+            type="button"
+            id="togglePassword"
+            class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 hover:text-primary transition text-sm"
+            title="Tampilkan password"
+          >
+            <i class="fa fa-eye" id="eyeIcon"></i>
+          </button>
+        </div>
+
+        <div id="strengthBar" class="hidden flex gap-1 mt-1">
+          <div id="bar1" class="h-1 flex-1 rounded-full bg-gray-200 transition-all"></div>
+          <div id="bar2" class="h-1 flex-1 rounded-full bg-gray-200 transition-all"></div>
+          <div id="bar3" class="h-1 flex-1 rounded-full bg-gray-200 transition-all"></div>
+        </div>
+        <p id="strengthLabel" class="hidden text-xs text-gray-400"></p>
+      </div>
+
+      <button
+        id="loginBtn"
+        onclick="handleLogin()"
+        class="w-full bg-primary hover:bg-primary-dark text-white font-bold text-sm py-3 rounded-lg transition"
+      >
+        Login
+      </button>
+
+
+      <div class="flex items-center gap-3">
+        <div class="flex-1 h-px bg-gray-200"></div>
+        <span class="text-xs text-gray-400 whitespace-nowrap">Or Login With</span>
+        <div class="flex-1 h-px bg-gray-200"></div>
+      </div>
+
+      <!-- Tombol Google -->
+      <button class="w-full flex items-center justify-center gap-3 bg-white border border-gray-200 hover:border-primary text-gray-700 text-sm font-semibold py-3 rounded-lg transition">
+        <svg width="18" height="18" viewBox="0 0 24 24">
+          <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+          <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+          <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l3.66-2.84z"/>
+          <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+        </svg>
+        Sign in with Account Google
+      </button>
+
+      <p class="text-center text-xs text-gray-400 mt-1">
+        Belum punya akun?
+        <a href="#" class="text-primary font-semibold hover:underline">Daftar Sekarang</a>
+      </p>
+      <p class="text-center text-xs text-gray-400">
+        <a href="index.html" class="text-primary font-semibold hover:underline">
+          <i class="fa fa-arrow-left text-xs mr-1"></i> Kembali ke Beranda
+        </a>
+      </p>
+    </div>
+
+  </div>
+
+  <script>
+    const emailInput    = document.getElementById('emailInput');
+    const passwordInput = document.getElementById('passwordInput');
+    const emailError    = document.getElementById('emailError');
+    const emailErrorText= document.getElementById('emailErrorText');
+    const passwordError = document.getElementById('passwordError');
+    const passwordErrorText = document.getElementById('passwordErrorText');
+    const strengthBar   = document.getElementById('strengthBar');
+    const strengthLabel = document.getElementById('strengthLabel');
+    const bar1 = document.getElementById('bar1');
+    const bar2 = document.getElementById('bar2');
+    const bar3 = document.getElementById('bar3');
+
+
+    function showError(errorEl, inputEl, message, errorTextEl) {
+      errorTextEl.textContent = message;
+      errorEl.classList.remove('hidden');
+    
+      inputEl.classList.add('border-red-400', 'focus:ring-red-200', 'focus:border-red-400');
+      inputEl.classList.remove('border-gray-200', 'focus:ring-primary/40', 'focus:border-primary');
+
+      inputEl.classList.add('shake');
+      setTimeout(() => inputEl.classList.remove('shake'), 400);
+    }
+
+    function hideError(errorEl, inputEl) {
+      errorEl.classList.add('hidden');
+      inputEl.classList.remove('border-red-400', 'focus:ring-red-200', 'focus:border-red-400');
+      inputEl.classList.add('border-gray-200', 'focus:ring-primary/40', 'focus:border-primary');
+    }
+
+    function showValid(inputEl) {
+      inputEl.classList.add('border-green-400', 'focus:ring-green-200', 'focus:border-green-400');
+      inputEl.classList.remove('border-gray-200', 'focus:ring-primary/40', 'focus:border-primary');
+    }
+
+    function clearValid(inputEl) {
+      inputEl.classList.remove('border-green-400', 'focus:ring-green-200', 'focus:border-green-400');
+      inputEl.classList.add('border-gray-200', 'focus:ring-primary/40', 'focus:border-primary');
+    }
+
+
+    emailInput.addEventListener('input', function () {
+      if (emailError.classList.contains('hidden')) return;
+      hideError(emailError, emailInput);
+      clearValid(emailInput);
+    });
+
+    function validateEmail() {
+      const val = emailInput.value.trim();
+
+      if (val === '') {
+        showError(emailError, emailInput, '⚠️ Email tidak boleh kosong.', emailErrorText);
+        return false;
+      }
+
+      // Cek format email dasar (ada @)
+      const hasAt = val.includes('@');
+      if (!hasAt) {
+        showError(emailError, emailInput, '⚠️ Format email salah. Contoh: nama@gmail.com', emailErrorText);
+        return false;
+      }
+
+      // Cek harus @gmail.com
+      if (!val.endsWith('@gmail.com')) {
+        showError(emailError, emailInput, '⚠️ Email harus menggunakan @gmail.com', emailErrorText);
+        return false;
+      }
+
+    
+      const localPart = val.split('@')[0];
+      if (localPart.length < 3) {
+        showError(emailError, emailInput, '⚠️ Nama email terlalu pendek (minimal 3 karakter sebelum @).', emailErrorText);
+        return false;
+      }
+
+      hideError(emailError, emailInput);
+      showValid(emailInput);
+      return true;
+    }
+
+    passwordInput.addEventListener('input', function () {
+      const val = passwordInput.value;
+
+
+      if (!passwordError.classList.contains('hidden')) {
+        hideError(passwordError, passwordInput);
+      }
+    });
+
+    passwordInput.addEventListener('blur', function () {
+      validatePassword();
+    });
+
+    function validatePassword() {
+      const val = passwordInput.value;
+
+      if (val === '') {
+        showError(passwordError, passwordInput, '⚠️ Password tidak boleh kosong.', passwordErrorText);
+        return false;
+      }
+
+      if (val.length < 8) {
+        showError(passwordError, passwordInput, `⚠️ Password minimal 8 karakter. (sekarang ${val.length} karakter)`, passwordErrorText);
+        return false;
+      }
+
+      hideError(passwordError, passwordInput);
+      showValid(passwordInput);
+      return true;
+    }
+
+    function updateStrength(val) {
+      let score = 0;
+      if (val.length >= 8)               score++; // panjang cukup
+      if (/[A-Z]/.test(val))             score++; // ada huruf kapital
+      if (/[0-9]/.test(val))             score++; // ada angka
+      if (/[^A-Za-z0-9]/.test(val))      score++; // ada simbol
+
+      [bar1, bar2, bar3].forEach(b => b.className = 'h-1 flex-1 rounded-full bg-gray-200 transition-all');
+
+      if (score <= 1) {
+        bar1.classList.add('bg-red-400');
+        strengthLabel.textContent = '🔴 Lemah';
+        strengthLabel.className = 'text-xs text-red-500';
+      } else if (score === 2 || score === 3) {
+        bar1.classList.add('bg-yellow-400');
+        bar2.classList.add('bg-yellow-400');
+        strengthLabel.textContent = '🟡 Sedang';
+        strengthLabel.className = 'text-xs text-yellow-500';
+      } else {
+        bar1.classList.add('bg-green-400');
+        bar2.classList.add('bg-green-400');
+        bar3.classList.add('bg-green-400');
+        strengthLabel.textContent = '🟢 Kuat';
+        strengthLabel.className = 'text-xs text-green-500';
+      }
+    }
+
+    document.getElementById('togglePassword').addEventListener('click', function () {
+      const eyeIcon = document.getElementById('eyeIcon');
+      if (passwordInput.type === 'password') {
+        passwordInput.type = 'text';
+        eyeIcon.classList.replace('fa-eye', 'fa-eye-slash');
+        this.title = 'Sembunyikan password';
+      } else {
+        passwordInput.type = 'password';
+        eyeIcon.classList.replace('fa-eye-slash', 'fa-eye');
+        this.title = 'Tampilkan password';
+      }
+    });
+
+  
+    function handleLogin() {
+      const emailOk    = validateEmail();
+      const passwordOk = validatePassword();
+
+      if (emailOk && passwordOk) {
+
+        const btn = document.getElementById('loginBtn');
+        btn.textContent = 'Masuk...';
+        btn.disabled = true;
+        btn.classList.add('opacity-75', 'cursor-not-allowed');
+
+        setTimeout(() => {
+          alert('✅ Login berhasil! Selamat datang.');
+          btn.textContent = 'Login';
+          btn.disabled = false;
+          btn.classList.remove('opacity-75', 'cursor-not-allowed');
+        }, 1500);
+      }
+    }
+
+
+    [emailInput, passwordInput].forEach(el => {
+      el.addEventListener('keydown', function (e) {
+        if (e.key === 'Enter') handleLogin();
+      });
+    });
+  </script>
+
+</body>
+</html>
